@@ -4,8 +4,8 @@
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/yourusername/book-api.git
-cd book-api
+git clone https://github.com/harsh-mahobia/BookStore
+cd BookStore
 ```
 
 ### 2️⃣ Install Dependencies
