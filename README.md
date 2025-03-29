@@ -27,7 +27,7 @@ npm run build  # Compiles TypeScript
 npm start  # Starts the server
 ```
 
-Server should be running at **http://localhost:5000** 🎉
+Server should be running at **http://localhost:8000** 🎉
 
 ---
 
@@ -65,7 +65,7 @@ Server should be running at **http://localhost:5000** 🎉
 ---
 
 ## 🎁 Bonus Features
-✅ **Pagination:** `GET /books?page=1&limit=10`  
+✅ **Pagination:** `GET /books?page=1&limit=5`  
 ✅ **Sorting:** Sort by price or rating using `?sort=price` or `?sort=rating`  
 ✅ **Dockerized Application** (see below)  
 
