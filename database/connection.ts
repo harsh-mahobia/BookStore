@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import { configDotenv } from "dotenv";
 configDotenv();
 
-const MONGO = process.env.MONGO_STRING!
+const MONGO = process.env.MONGO!
 const connectDB = async () => {
   try {
     if (!MONGO) {
