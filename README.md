@@ -27,34 +27,34 @@ npm run build  # Compiles TypeScript
 npm start  # Starts the server
 ```
 
-Server should be running at **http://localhost:8000** 🎉
+Server should be running at **http://localhost:5000** 🎉
 
 ---
 
 ## 🛠 Core Functionalities
 
 ### 1️⃣ User Authentication (JWT-based)
-✅ **Signup:** `POST /auth/signup` (email, password)  
-✅ **Login:** `POST /auth/login` (returns JWT token)  
+✅ **Signup:** `POST api/signup` (email, password)  
+✅ **Login:** `POST api/login` (returns JWT token)  
 ✅ **Protected Routes:** Only logged-in users can access the following endpoints:  
-   - `POST /books`  
-   - `PUT /books/:id`  
-   - `DELETE /books/:id`  
+   - `POST api/books`  
+   - `PUT api/books/:id`  
+   - `DELETE api/books/:id`  
 
 ---
 
 ### 2️⃣ Books API
-✅ **Create a Book:** `POST /books`  
-✅ **Get All Books:** `GET /books`  
-✅ **Get Book by ID:** `GET /books/:id`  
-✅ **Update Book by ID:** `PUT /books/:id`  
-✅ **Delete Book by ID:** `DELETE /books/:id`  
+✅ **Create a Book:** `POST api/books`  
+✅ **Get All Books:** `GET api/books`  
+✅ **Get Book by ID:** `GET api/books/:id`  
+✅ **Update Book by ID:** `PUT api/books/:id`  
+✅ **Delete Book by ID:** `DELETE api/books/:id`  
 
 ---
 
 ### 3️⃣ Filtering & Search
-✅ **Filter Books:** `GET /books/filter?author=...&category=...&rating=...`  
-✅ **Search by Title:** `GET /books/search?title=...` (partial match)  
+✅ **Filter Books:** `GET api/books/filter?author=...&category=...&rating=...`  
+✅ **Search by Title:** `GET api/books/search?title=...` (partial match)  
 
 ---
 
@@ -65,7 +65,7 @@ Server should be running at **http://localhost:8000** 🎉
 ---
 
 ## 🎁 Bonus Features
-✅ **Pagination:** `GET /books?page=1&limit=5`  
+✅ **Pagination:** `GET api/books?page=1&limit=5`  
 ✅ **Sorting:** Sort by price or rating using `?sort=price` or `?sort=rating`  
 ✅ **Dockerized Application** (see below)  
 
