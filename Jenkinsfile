@@ -27,8 +27,10 @@ pipeline {
                 sh """
                     docker stop ${CONTAINER_NAME} || true
                     docker rm ${CONTAINER_NAME} || true
-                    docker run -d --name ${CONTAINER_NAME} -e MONGO=${MONGO} -p 80:${PORT} ${IMAGE_NAME}
-                """
+                 """
+                 sh('docker run -d --name ${CONTAINER_NAME} -e MONGO=${MONGO} -p 80:${PORT} ${IMAGE_NAME}')
+                   
+               
             }
         }
     }
