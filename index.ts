@@ -1,12 +1,13 @@
 import express, { Request, Response , Application } from 'express';
 import dotenv from 'dotenv';
-
+import { register } from './monitoring/prometheus';
 
 import errorHandler from "./middlewares/error_handler";
 import auth from "./routes/auth"
 import book from "./routes/book"
 import connectDB from './database/connection';
 import cors from 'cors';
+
 
 
 
@@ -26,6 +27,18 @@ app.use(cors({
 
 app.get('/', (req: Request, res: Response) => {
   res.send(' Server running');
+});
+
+
+app.get('/metrics', async (req: Request, res: Response) => {
+  res.setHeader('Content-Type', register.contentType);
+
+  try {
+    const data = await register.metrics();
+    res.status(200).send(data);
+  } catch (error) {
+    res.status(500).send('Error fetching metrics');
+  }
 });
 
 

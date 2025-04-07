@@ -5,6 +5,7 @@ pipeline {
         IMAGE_NAME = 'nodejs-app'
         CONTAINER_NAME = 'nodejs-container'
         PORT = '5000'
+        MONGO = credentials('mongo-uri-secret-id')
     }
 
     stages {
@@ -26,7 +27,7 @@ pipeline {
                 sh """
                     docker stop ${CONTAINER_NAME} || true
                     docker rm ${CONTAINER_NAME} || true
-                    docker run -d --name ${CONTAINER_NAME} -p 80:${PORT} ${IMAGE_NAME}
+                    docker run -d --name ${CONTAINER_NAME} -e MONGO=${MONGO} -p 80:${PORT} ${IMAGE_NAME}
                 """
             }
         }
