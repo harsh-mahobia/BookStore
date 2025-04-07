@@ -4,7 +4,7 @@ pipeline {
     environment {
         IMAGE_NAME = 'nodejs-app'
         CONTAINER_NAME = 'nodejs-container'
-        PORT = '5000'
+        PORT = '8000'
         MONGO = credentials('mongo-uri-secret-id')
     }
 
