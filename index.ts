@@ -7,9 +7,17 @@ import auth from "./routes/auth"
 import book from "./routes/book"
 import connectDB from './database/connection';
 import cors from 'cors';
+import rateLimit from 'express-rate-limit';
 
 
 
+
+
+const ratelimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100, 
+  message : "You have reached your maximum request limit for this time period, try after 15 mins",
+})
 
 dotenv.config();
 
@@ -19,6 +27,7 @@ const port = process.env.PORT || 8000;
 
 connectDB()
 
+app.use(ratelimiter);
 app.use(express.json())
 
 app.use(cors({
