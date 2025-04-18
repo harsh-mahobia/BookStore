@@ -35,7 +35,7 @@ app.use(cors({
 }))
 
 app.get('/', (req: Request, res: Response) => {
-  res.send(' Server running');
+  res.send(' Server running is running on http://35.193.138.238');
 });
 
 
